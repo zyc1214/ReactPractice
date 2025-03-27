@@ -21,10 +21,14 @@ function UseState(){
         <div>
             <input type="text" placeholder="enter name" onChange={handleChange}/><br/>
             <input type="text" placeholder="enter phone" onChange={handlephoneChange}/><br/>  
-            <input type="text" placeholder="enter password" onChange={handlePasswordChange}/>
+            <input type="password" placeholder="enter password" onChange={handlePasswordChange}/>
             <p>name {text}</p>
             <p>phone {phone}</p>
-            <p>password {password}</p>
+            <p>密碼: {
+                password.length > 0 
+                ? password.charAt(0) + '●'.repeat(password.length - 1) 
+                : '尚未輸入'
+            }</p>
         </div>
     )
 }

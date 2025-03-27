@@ -8,6 +8,10 @@ import Mymoney from './components/Mymoney';
 import Compons_list from './components/Compons_list.js';
 import UseState from './components/UseState1.js';
 import UseState2 from './components/UseState2.js';
+import NumBer_Limit from './components/NumBer_Limit.js';
+import Number_Limit2 from './components/Number_Limit2.js';
+import StarRating from './components/StarRating.js';
+import ShoppingCar from './components/ShoppingCar.js';
 
 const posts = [
   { 
@@ -119,14 +123,30 @@ function App() {
           <Compons_list />
         </main>
       </div>
-     <div className='App'>
+      <h1>--------------------------------------------------------------------------------------------------------------------</h1>
+       <div className='App'>
           <h1>React useState example</h1>
           <UseState/>
+      </div>
+      <div className='App'>
+          <h1>html nuber limit</h1>
+          <NumBer_Limit/>
+      </div>
+      <div className='App'>
+          <Number_Limit2/>
+      </div>
+      <div className='App'>
+          <h1>教學評鑑</h1>
+          <StarRating/>
       </div>
       <div className='App'>
           <h1>React useState example</h1>
           <UseState2/>
       </div>
+      <div className='App'>
+          <h1>購物車</h1>
+          <ShoppingCar/>
+      </div>  
       </>
   );
 }
