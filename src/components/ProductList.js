@@ -47,7 +47,13 @@ export default function ProductList({ products, onAddToCart }) {
             <img
               src={item.imgUrl}
               alt={item.name}
-              style={{ width: "150px", display: "block", margin: "0 auto" }}
+              style={{ 
+                width: "150px", 
+                height: "150px", 
+                objectFit: "cover", 
+                display: "block", 
+                margin: "0 auto" 
+              }}
             />
             <h4>{item.name}</h4>
             <p>價格：NT$ {item.price}</p>

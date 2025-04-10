@@ -1,6 +1,7 @@
 import React from "react";
 
-export default function CartSummary({ cartItems }) {
+export default function CartSummary({ cartItems, onCartQuantityChange, onRemoveItem }) {
+  // 計算總金額
   const totalAmount = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
@@ -14,8 +15,19 @@ export default function CartSummary({ cartItems }) {
       ) : (
         <ul>
           {cartItems.map((item) => (
-            <li key={item.id}>
-              {item.name} x {item.quantity} = NT$ {item.price * item.quantity}
+            <li key={item.id} style={{ marginBottom: "10px" }}>
+              <strong>{item.name}</strong>
+              <div>
+                {/* 加減數量 */}
+                <button onClick={() => onCartQuantityChange(item.id, -1)}>-</button>
+                <span style={{ margin: "0 8px" }}>{item.quantity}</span>
+                <button onClick={() => onCartQuantityChange(item.id, 1)}>+</button>
+                {/* 新增：刪除商品的按鈕 */}
+                <button style={{ marginLeft: "8px" }} onClick={() => onRemoveItem(item.id)}>
+                  移除
+                </button>
+              </div>
+              <p>小計：NT$ {item.price * item.quantity}</p>
             </li>
           ))}
         </ul>
